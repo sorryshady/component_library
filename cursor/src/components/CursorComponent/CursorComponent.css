@@ -17,7 +17,7 @@
   pointer-events: none;
   background-color: white;
   border-radius: 50%;
-  animation: expandWhite 1s forwards;
+  animation: expandWhite 0.5s forwards;
 }
 
 .enter::after {
@@ -30,8 +30,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  animation: expandBlack 1s forwards;
-  animation-delay: 300ms; 
+  animation: expandBlack 0.5s forwards;
+  animation-delay: 200ms; 
 }
 
 @keyframes expandWhite {
@@ -54,5 +54,25 @@
     width: 150px;
     height: 150px;
     display: block;
+  }
+}
+/*\\\\\\\\\\\\\\\\\\\\\\\\\*/
+.content {
+  color: white;
+  z-index: 102;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0; /* Initially, set the opacity to 0 */
+  animation: fadeIn 0.5s forwards 500ms; /* Add an animation to fade in after 500ms */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

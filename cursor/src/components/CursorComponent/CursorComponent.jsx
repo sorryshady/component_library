@@ -14,7 +14,9 @@ function CursorComponent({ mousePosition, hovering }) {
       className={`cursor ${hovering ? 'enter' : ''}`}
       variants={variants}
       animate='default'
-    />
+    >
+      <div className='content'>Loading...</div>
+    </motion.div>
   )
 }
 
