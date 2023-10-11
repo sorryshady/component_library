@@ -1,7 +1,12 @@
 import './App.css'
+import LoadingScreen from './components/LoadingScreen/LoadingScreen'
 
 function App() {
-  return <div>Loading Screen</div>
+  return (
+    <>
+      <LoadingScreen />
+    </>
+  )
 }
 
 export default App

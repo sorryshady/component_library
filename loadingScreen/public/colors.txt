@@ -1,0 +1,12 @@
+--color-bg: #ffffff;
+    --color-gray: #f4f4f4;
+    --color-white: #fff;
+    --color-black: #000;
+    --color-yellow: #f9f0d9;
+    --color-text: #382f2d;
+    --color-natuzzi: #faf4e4;
+    --color-italia: #faf4e4;
+    --color-editions: #f7ebe8;
+    --color-theme: var(--color-natuzzi);
+    --color-modal: #ecebeb;
+    --color-error: rgba(255,0,0,0.5);
