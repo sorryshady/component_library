@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import './CursorComponent.css'
 
-function CursorComponent({ mousePosition, hovering }) {
+function CursorComponent({ mousePosition, hovering, text }) {
   const variants = {
     default: {
       x: mousePosition.x,
@@ -15,7 +15,7 @@ function CursorComponent({ mousePosition, hovering }) {
       variants={variants}
       animate='default'
     >
-      <div className='content'>Loading...</div>
+      <div className='content'>{text}</div>
     </motion.div>
   )
 }
