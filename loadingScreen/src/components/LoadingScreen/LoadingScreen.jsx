@@ -7,10 +7,10 @@ const LoadingScreen = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (count < 100) {
-        setCount((prevCount) => prevCount + 5)
+      if (count < 200) {
+        setCount((prevCount) => prevCount + 4)
       }
-    }, 100)
+    }, 80)
 
     return () => {
       clearInterval(interval)
@@ -19,20 +19,24 @@ const LoadingScreen = () => {
 
   return (
     <div className='outer-container'>
-      <div className='inner-container'>
+      <motion.div
+        className='inner-container'
+        initial={{ width: 0, originX: 0 }}
+        animate={{ width: `${count / 2}%` }}
+      >
         <AnimatePresence mode='sync'>
           <motion.div
             key={count}
+            className='load-percent'
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -30 }}
-            transition={{ duration: 0.1 }}
-            className='load-percent'
+            transition={{ duration: 0.08 }}
           >
-            {count}
+            {count / 2}
           </motion.div>
         </AnimatePresence>
-      </div>
+      </motion.div>
     </div>
   )
 }

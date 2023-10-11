@@ -1,8 +1,6 @@
 .outer-container{
   padding: 5rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
   width: 100vw;
 }
@@ -19,7 +17,7 @@
   font-size: 3rem;
   width: auto;
   bottom: 30px;
-  right: -20px;
+  right: -30px;
   transform: translateX(-50%);
   text-align: center;
 }
