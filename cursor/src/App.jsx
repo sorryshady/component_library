@@ -1,39 +1,10 @@
-import { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
 import './App.css'
+import CursorComponent from './components/CursorComponent/CursorComponent'
+import { useCursor } from './hooks/useCursor'
 
 function App() {
-  const [mousePosition, setMousePosition] = useState({
-    x: 0,
-    y: 0,
-  })
-
-  useEffect(() => {
-    const mouseMove = (e) => {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY,
-      })
-    }
-
-    window.addEventListener('mousemove', mouseMove)
-    return () => {
-      window.removeEventListener('mousemove', mouseMove)
-    }
-  })
-  const [hovering, setHovering] = useState(false)
-  const handleMouseEnter = () => {
-    setHovering(true)
-  }
-  const handleMouseLeave = () => {
-    setHovering(false)
-  }
-  const variants = {
-    default: {
-      x: mousePosition.x,
-      y: mousePosition.y,
-    },
-  }
+  const { mousePosition, hovering, handleMouseEnter, handleMouseLeave } =
+    useCursor()
   return (
     <>
       <div
@@ -43,11 +14,7 @@ function App() {
       >
         <h1>This is cursor sample project</h1>
       </div>
-      <motion.div
-        className={`cursor ${hovering ? 'enter' : ''}`}
-        variants={variants}
-        animate='default'
-      />
+      <CursorComponent mousePosition={mousePosition} hovering={hovering} />
     </>
   )
 }
