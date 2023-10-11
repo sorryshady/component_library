@@ -4,31 +4,83 @@
   padding: 2rem;
   text-align: center;
 }
-.title{
+body{
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: grey;
+}
+
+.title {
   padding: 2rem;
   border: 2px solid black;
   position: relative;
   z-index: 100;
+  background-color: white;
 }
-.cursor{
+
+.cursor {
   display: none;
   background-color: #111;
-  height: 32px;
-  width: 32px;
+  height: 1px;
+  width: 1px;
   border-radius: 50%;
   position: fixed;
   top: -10%;
-  left: -4.5%;
+  left: -4.5%; 
 }
 
-.title:hover{
+.title:hover {
   cursor: pointer;
 }
-.enter{
+
+
+.enter {
   display: block;
-  cursor: pointer;
+  position: absolute;
   width: 150px;
   height: 150px;
   z-index: 101;
   pointer-events: none;
+  background-color: white;
+  border-radius: 50%;
+  animation: expandWhite 1s forwards;
+}
+
+.enter::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  background-color: black;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: expandBlack 1s forwards;
+  animation-delay: 300ms; 
+}
+
+@keyframes expandWhite {
+  from {
+    width: 0;
+    height: 0;
+  }
+  to {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@keyframes expandBlack {
+  from {
+    width: 0;
+    height: 0;
+  }
+  to {
+    width: 150px;
+    height: 150px;
+    display: block;
+  }
 }
