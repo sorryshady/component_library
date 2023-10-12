@@ -1,7 +1,7 @@
 import './App.css'
 import LoadingScreen from './components/LoadingScreen/LoadingScreen'
 
-function App() {
+const App = () => {
   return (
     <>
       <LoadingScreen />
