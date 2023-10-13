@@ -17,25 +17,30 @@ const Navbar = () => {
   const [hidden, setHidden] = useState(false)
   return (
     <>
-      <motion.nav
+      <motion.div
         variants={{
           visible: { y: 0 },
-          hidden: { y: '-100%' },
+          hidden: { y: '-95%' },
         }}
         animate={hidden ? 'hidden' : 'visible'}
         transition={{ duration: 0.35, ease: 'easeInOut' }}
         className='nav-container'
       >
-        <div className='logo'>Company logo</div>
-        <ul className='action-section'>
-          <li className='nav-link'>Sign In</li>
-          <li className='nav-link'>Pricing</li>
-          <li className='nav-link'>About Us</li>
-        </ul>
-      </motion.nav>
-      <ScrollProgress />
+        <nav className='container'>
+          <div className='logo'>Company logo</div>
+          <ul className='action-section'>
+            <li className='nav-link'>Sign In</li>
+            <li className='nav-link'>Pricing</li>
+            <li className='nav-link'>About Us</li>
+          </ul>
+        </nav>
+        <ScrollProgress />
+      </motion.div>
     </>
   )
 }
 
 export default Navbar
+
+
+
