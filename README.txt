@@ -1,1 +1,0 @@
-This is a sample component library where I am building fascinating components I find on the web.
