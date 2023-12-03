@@ -26,7 +26,7 @@ const Images = ({ index, direction, style }) => {
         initial='initial'
         animate='animate'
         style={{ ...style }}
-        transition={{ duration: 0.6, delay: index * 0.3 }}
+        transition={{ duration: 0.9, delay: index * 0.3 }}
         className={styles.imgContainer}
       >
         <img src={Image} alt='random image' />
